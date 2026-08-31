@@ -4,9 +4,9 @@ public class Metodos {
     Scanner sc = new Scanner (System.in); 
     //Métodos:
     public ObjVehiculo[][] LLenarCeldas(ObjVehiculo[][] m) {
+        int numeroCelda=1;
         for(int i=0;i<m.length;i++){
             for (int j=0;j<m.length;j++){
-                int numeroCelda = 1;
                 ObjVehiculo o = new ObjVehiculo ();
                 System.out.println("Ingrese la marca del vehiculo: ");
                 o.setMarca(sc.next());
@@ -31,15 +31,15 @@ public class Metodos {
     public ObjVehiculo [][] CalcularNuevoPago(ObjVehiculo[][] m){
 
         for (int i=0;i<m.length;i++){
-            for (int j=0;j<m.length;i++){
+            for (int j=0;j<m.length;j++){
                 m[i][j].setPagoActual((int) (m[i][j].getPagoAnterior() * 1.23));
             }
         }
         return m;
     }
     public void MostrarInformacionCeldas(ObjVehiculo[][] m){
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m.length; j++) {
                 System.out.println("Marca: "+ m[i][j].getMarca());
                 System.out.println("Tipo de vehiculo: "+ m[i][j].getTipo());
                 System.out.println("Cilindraje: " + m[i][j].getCilindraje());
